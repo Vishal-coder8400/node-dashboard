@@ -4,9 +4,11 @@ require('dotenv').config()
 const db=require("./config/db")
 const Person=require("./models/Person")
 const personRoute=require("./routes/personRoute")
-
 const bodyParser=require("body-parser")
 const PersonModel = require("./models/Person")
+const cors=require("cors")
+
+app.use(cors())
 app.use(bodyParser.json())
 
 app.get("/",(req,res)=>{
